@@ -16,7 +16,7 @@ class Dashboard extends BaseDashboard
 
     public array $gridItems = [];
 
-    protected static string $view = 'filament-gridstack-dashboard::pages.dashboard';
+    protected string $view = 'filament-gridstack-dashboard::pages.dashboard';
 
     public static function canAccess(): bool
     {
@@ -48,7 +48,7 @@ class Dashboard extends BaseDashboard
         return GridstackDashboardPlugin::get()->getNavigationSort() ?? parent::getNavigationSort();
     }
 
-    public function getColumns(): int
+    public function getColumns(): int|array
     {
         return GridstackDashboardPlugin::get()->getColumns() ?? 12;
     }
